@@ -1,5 +1,5 @@
 // Cenexión al Servidor Externo
-function subirDatos(nomb,email,tel){ //Creamos una función llamada subirDatos con 3 parametros que son los datos que solicitamos
+function subirDatos(nomb,email,tel,foto){ //Creamos una función llamada subirDatos con 3 parametros que son los datos que solicitamos
 
 		$.ajax({ //Sintaxys del AJAX con POST
 		  type: "POST",
