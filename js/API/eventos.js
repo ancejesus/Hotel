@@ -15,5 +15,8 @@ $(document).ready(function(e) { // Cargamos la libreria de Java
 		navigator.notification.alert('Todos los Campos son requeridos',null,'Registro','Aceptar');
 	}
 	});	
+	$('#regFoto').tap(function(){ //Mandamos a llamar la funcion del tab regsend
+	tomarFoto();
+	}); 	
 	}, false); //Librerias de Phonegap
 });
