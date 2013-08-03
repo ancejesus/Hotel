@@ -14,5 +14,5 @@ $(document).ready(function(e) { // Cargamos la libreria de Java
 		navigator.notification.alert('Todos los Campos son requeridos',null,'Registro','Aceptar');
 	}
 	});	
-	}, falase); //Librerias de Phonegap
+	}, false); //Librerias de Phonegap
 });

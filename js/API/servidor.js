@@ -7,6 +7,7 @@ function subirDatos(nomb,email,tel){ //Creamos una función llamada subirDatos c
 		  data: 'nom='+nom+'&mai='+email+'&tel='+tel //Asignamos variables a nuestros parámetros
 		  //Modificamos las variables que vamos a enviar al servidor "{ name: "John", location: "Boston" }"
 		}).done(function( msg ) { 
+			if (msg==1){
 		navigator.notification.confirm('Datos enviados correctamente',function(btn){
 				switch(btn){ 
 					case 1:
@@ -21,5 +22,8 @@ function subirDatos(nomb,email,tel){ //Creamos una función llamada subirDatos c
 				}
 			},'Confirmación','Vibrar,Beep,Cancelar');
 		   //Modificamos la funcion que resivimos de nuestro servidor por una notificacion de phonegap	""alert( "Data Saved: " + msg );
+			}else{
+				navigator.notification.alert('Error al procesar datos',null,'error','Aceptar');
+			}
 		});
 	}   //Cerramos la funcion subirDatos
