@@ -2,7 +2,7 @@
 $(document).ready(function(e) { // Cargamos la libreria de Java
 	document.addEventListener("deviceready",function(){ //Cargamos la libreria de Phonegap
 	window.location.href="#login"; //Mandamos nuestra página de Login
-	$('#regSend').click(function(){; //Capturamos el boton clic
+	$('#regSend').tap(function(){; //Capturamos el boton clic cambiamos clic por tap
     var nom= $('#regNom').val(); 
 	var mail=$('#regEmail').val();
 	var tel= $('#regTel').val();
