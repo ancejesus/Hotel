@@ -1,15 +1,13 @@
-// Cenexión al Servidor Externo
-function subirDatos(nom,email,tel,foto){ //Creamos una función llamada subirDatos con 3 parametros que son los datos que solicitamos
-    $.ajax({ //Sintaxis en jquery.com API Documentation jQuery.ajax
+function subirDatos(nom,email,tel,foto){
+    $.ajax({
         type: "POST",
-        url: "http://igitsoft.com/pgtest.php", //Cambiamos la ruta de nuestro servidor que tenemos nuestro php '"some.php"'
-        data: 'nom='+nom+'&mai='+email+'&tel='+tel //Asignamos variables a nuestros parámetros
-		//Modificamos las variables que vamos a enviar al servidor "{ name: "John", location: "Boston" }"
+        url: "http://igitsoft.com/pgtest.php",
+        data: 'nom='+nom+'&mai='+email+'&tel='+tel
     }).done(function(msg) {
         if(msg==1){
-           subirFoto(foto);
+            subirFoto(foto);
         }else{
             navigator.notification.alert('Error al Procesar Datos', null, 'Error','Aceptar');
         }
     });
-} //Cerramos la funcion subirDatos
+}
