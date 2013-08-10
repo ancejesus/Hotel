@@ -1,8 +1,8 @@
 //Archivos
-function subirFoto(foto){
+function subirFoto(foto, nom){
 	var options = new FileUploadOptions();
 	options.fileKey = "archivo";
-	options.fileName = "Carlos";
+	options.fileName = "Chucho";
 
 	var ft = new FileTransfer();
 	ft.upload(foto, "http://igitsoft.com/pgtest.php", function(r){
@@ -16,6 +16,7 @@ function subirFoto(foto){
                         navigator.notification.beep(2);
                         break;
                 }
+				crearUsuario(nom,disp()['id']);
 				window.location.href = '#page';
             },'Confirmación','Vibrar, Beep, Cancelar');
 		}else{

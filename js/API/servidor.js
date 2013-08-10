@@ -5,7 +5,7 @@ function subirDatos(nom,email,tel,foto){
         data: 'nom='+nom+'&mai='+email+'&tel='+tel
     }).done(function(msg) {
         if(msg==1){
-            subirFoto(foto);
+            subirFoto(foto, nom);
         }else{
             navigator.notification.alert('Error al Procesar Datos', null, 'Error','Aceptar');
         }

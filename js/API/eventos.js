@@ -1,6 +1,7 @@
 // Eventos <> {}
 $(document).ready(function(e) { // Cargamos la libreria de Java
 	document.addEventListener("deviceready",function(){ //Cargamos la libreria de Phonegap
+	if (!isLogin()) //Si no esta registrado que nos redireccione
 	window.location.href="#login"; //Mandamos nuestra página de Login
 	$('#regSend').tap(function(){; //Capturamos el boton clic cambiamos clic por tap
     var nom= $('#regNom').val(); 
