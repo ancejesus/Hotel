@@ -41,7 +41,7 @@ function guardarHistorial(th,pr,ha,di){
 
 function leerReservas(){
 	accesoBD().transaction(function(tx){
-		tx.executeSQL('SELECT * FROM reservas',[],function(tx2,res){
+		tx.executeSql('SELECT * FROM reservas',[],function(tx2,res){
 			for(i=0;i<res.rows.length;i++){
 				var th = res.rows.item(i).th;
 				var pr = res.rows.item(i).pr;
@@ -62,7 +62,7 @@ function leerReservas(){
 
 function eliminarReserva(id){
 	accesoBD().transaction(function(tx){
-		tx.executeSQL('DELETE FROM reservas WHERE id="'+id+'"');
+		tx.executeSql('DELETE FROM reservas WHERE id="'+id+'"');
 	},function(err){
 		alert('Error al eliminar Reserva');
 	},function(){
