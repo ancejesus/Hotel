@@ -19,5 +19,38 @@ $(document).ready(function(e) { // Cargamos la libreria de Java
 	$('#regFoto').tap(function(){ //Mandamos a llamar la funcion del tab regsend
 	tomarFoto();
 	}); 	
-	}, false); //Librerias de Phonegap
+	$('#nr1 div[data-role=content] ul li').tap(function(){
+		if($(this).index()>0){; //MAnda el indice del div en que posicion esta o damos clic del tap
+		var padre = $(this).parents('ul');
+		padre.find('li').removeAttr('style');
+		$(this).css('background','#F60');
+		$('#nr1').attr('th',$(this).index()); //A el div seleccionado le agrega el aributo th
+		
+		}
+		});
+		//Vamos a capturar el id del boton siguiente
+		$('#resSig').tap(function(){
+			if($('#nr1').attr('th')!=undefined && $('#nr1').attr('th')!='')
+			{
+				window.location.href='#nr2';				
+				}
+			});		
+			
+		$('#resSend').tap(function(){
+			var th=$('#nr1').attr('th');		
+			var pr=$('#resPer').val();
+			var ha=$('#resHab').val();
+			var di=$('#resDia').val();
+			if(isConnected()){
+			//Enviar a Servidor	
+			subirReservas(th,pr,ha,di,1);			
+			}else{
+			//Guardar localmente	
+			guardarReservas(th,pr,ha,di);			
+			}
+		});
+		document.addEventListener("Online",function(){
+			leerReservas();
+		}, false);		
+	}, false); //Librerias de Phonegap	
 });
